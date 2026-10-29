@@ -1,0 +1,157 @@
+[
+  {
+    "case_id": "supported-claim",
+    "question": "Did intervention A improve the measured outcome?",
+    "candidate_answer": "Intervention A improved the measured outcome in the demonstration sample.",
+    "candidate_abstained": false,
+    "expected_abstention": false,
+    "evidence": [
+      {
+        "evidence_id": "evidence-01",
+        "source_title": "Controlled synthetic outcome report",
+        "text": "In a controlled demonstration sample, intervention A improved the measured outcome relative to baseline."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "claim-01",
+        "text": "Intervention A improved the measured outcome in the demonstration sample.",
+        "citation_ids": ["evidence-01"]
+      }
+    ],
+    "annotations": [
+      {
+        "claim_id": "claim-01",
+        "support_status": "supported",
+        "supporting_evidence_ids": ["evidence-01"]
+      }
+    ]
+  },
+  {
+    "case_id": "missing-citation",
+    "question": "Did intervention A improve the measured outcome?",
+    "candidate_answer": "Intervention A improved the measured outcome in the demonstration sample.",
+    "candidate_abstained": false,
+    "expected_abstention": false,
+    "evidence": [
+      {
+        "evidence_id": "evidence-01",
+        "source_title": "Controlled synthetic outcome report",
+        "text": "In a controlled demonstration sample, intervention A improved the measured outcome relative to baseline."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "claim-01",
+        "text": "Intervention A improved the measured outcome in the demonstration sample.",
+        "citation_ids": []
+      }
+    ],
+    "annotations": [
+      {
+        "claim_id": "claim-01",
+        "support_status": "supported",
+        "supporting_evidence_ids": ["evidence-01"]
+      }
+    ]
+  },
+  {
+    "case_id": "irrelevant-citation",
+    "question": "Did intervention A improve the measured outcome?",
+    "candidate_answer": "Intervention A improved the measured outcome in the demonstration sample.",
+    "candidate_abstained": false,
+    "expected_abstention": false,
+    "evidence": [
+      {
+        "evidence_id": "evidence-01",
+        "source_title": "Controlled synthetic outcome report",
+        "text": "In a controlled demonstration sample, intervention A improved the measured outcome relative to baseline."
+      },
+      {
+        "evidence_id": "evidence-02",
+        "source_title": "Controlled synthetic recruitment report",
+        "text": "The demonstration sample included 40 participants."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "claim-01",
+        "text": "Intervention A improved the measured outcome in the demonstration sample.",
+        "citation_ids": ["evidence-02"]
+      }
+    ],
+    "annotations": [
+      {
+        "claim_id": "claim-01",
+        "support_status": "supported",
+        "supporting_evidence_ids": ["evidence-01"]
+      }
+    ]
+  },
+  {
+    "case_id": "unknown-citation",
+    "question": "Did intervention A improve the measured outcome?",
+    "candidate_answer": "Intervention A improved the measured outcome in the demonstration sample.",
+    "candidate_abstained": false,
+    "expected_abstention": false,
+    "evidence": [
+      {
+        "evidence_id": "evidence-01",
+        "source_title": "Controlled synthetic outcome report",
+        "text": "In a controlled demonstration sample, intervention A improved the measured outcome relative to baseline."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "claim-01",
+        "text": "Intervention A improved the measured outcome in the demonstration sample.",
+        "citation_ids": ["evidence-does-not-exist"]
+      }
+    ],
+    "annotations": [
+      {
+        "claim_id": "claim-01",
+        "support_status": "supported",
+        "supporting_evidence_ids": ["evidence-01"]
+      }
+    ]
+  },
+  {
+    "case_id": "failure-to-abstain",
+    "question": "Does the available evidence establish a causal effect of intervention A?",
+    "candidate_answer": "Intervention A caused the outcome improvement.",
+    "candidate_abstained": false,
+    "expected_abstention": true,
+    "evidence": [
+      {
+        "evidence_id": "evidence-01",
+        "source_title": "Controlled synthetic observational report",
+        "text": "The report describes an observed association and contains no control condition."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "claim-01",
+        "text": "Intervention A caused the outcome improvement.",
+        "citation_ids": ["evidence-01"]
+      }
+    ],
+    "annotations": [
+      {
+        "claim_id": "claim-01",
+        "support_status": "unsupported",
+        "supporting_evidence_ids": []
+      }
+    ]
+  },
+  {
+    "case_id": "appropriate-abstention",
+    "question": "Does the available evidence establish a causal effect of intervention A?",
+    "candidate_answer": "The available evidence is insufficient to establish a causal effect.",
+    "candidate_abstained": true,
+    "expected_abstention": true,
+    "evidence": [],
+    "claims": [],
+    "annotations": []
+  }
+]
