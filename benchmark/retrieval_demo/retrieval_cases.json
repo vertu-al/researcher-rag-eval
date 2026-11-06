@@ -1,0 +1,36 @@
+{
+  "dataset_id": "controlled-intervention-retrieval",
+  "dataset_version": "v1",
+  "cases": [
+    {
+      "case_id": "outcome-improvement",
+      "question": "Did intervention A improve the measured outcome?",
+      "relevant_chunk_ids": ["intervention_outcome::p001"],
+      "expected_abstention": false
+    },
+    {
+      "case_id": "sample-size",
+      "question": "How many participants were included in the demonstration sample?",
+      "relevant_chunk_ids": ["sample_characteristics::p001"],
+      "expected_abstention": false
+    },
+    {
+      "case_id": "causal-inference",
+      "question": "Does the available evidence establish a causal effect of intervention A?",
+      "relevant_chunk_ids": ["study_design_limitations::p001"],
+      "expected_abstention": true
+    },
+    {
+      "case_id": "baseline-comparison",
+      "question": "What was the measured outcome compared against?",
+      "relevant_chunk_ids": ["intervention_outcome::p001"],
+      "expected_abstention": false
+    },
+    {
+      "case_id": "adverse-events",
+      "question": "Which adverse events were reported for intervention A?",
+      "relevant_chunk_ids": [],
+      "expected_abstention": true
+    }
+  ]
+}

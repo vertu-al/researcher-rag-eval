@@ -1,0 +1,148 @@
+{
+  "case_results": [
+    {
+      "case_id": "outcome-improvement",
+      "expected_abstention": false,
+      "metrics": {
+        "hit_at_k": true,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "question": "Did intervention A improve the measured outcome?",
+      "relevant_chunk_ids": [
+        "intervention_outcome::p001"
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": "intervention_outcome::p001",
+          "rank": 1,
+          "score": 0.6682834625244141
+        },
+        {
+          "chunk_id": "sample_characteristics::p001",
+          "rank": 2,
+          "score": 0.31376004219055176
+        }
+      ]
+    },
+    {
+      "case_id": "sample-size",
+      "expected_abstention": false,
+      "metrics": {
+        "hit_at_k": true,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "question": "How many participants were included in the demonstration sample?",
+      "relevant_chunk_ids": [
+        "sample_characteristics::p001"
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": "sample_characteristics::p001",
+          "rank": 1,
+          "score": 0.8106203675270081
+        },
+        {
+          "chunk_id": "intervention_outcome::p001",
+          "rank": 2,
+          "score": 0.5759285092353821
+        }
+      ]
+    },
+    {
+      "case_id": "causal-inference",
+      "expected_abstention": true,
+      "metrics": {
+        "hit_at_k": true,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "question": "Does the available evidence establish a causal effect of intervention A?",
+      "relevant_chunk_ids": [
+        "study_design_limitations::p001"
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": "study_design_limitations::p001",
+          "rank": 1,
+          "score": 0.4651125371456146
+        },
+        {
+          "chunk_id": "intervention_outcome::p001",
+          "rank": 2,
+          "score": 0.4536380171775818
+        }
+      ]
+    },
+    {
+      "case_id": "baseline-comparison",
+      "expected_abstention": false,
+      "metrics": {
+        "hit_at_k": true,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "question": "What was the measured outcome compared against?",
+      "relevant_chunk_ids": [
+        "intervention_outcome::p001"
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": "intervention_outcome::p001",
+          "rank": 1,
+          "score": 0.45718687772750854
+        },
+        {
+          "chunk_id": "sample_characteristics::p001",
+          "rank": 2,
+          "score": 0.28896915912628174
+        }
+      ]
+    },
+    {
+      "case_id": "adverse-events",
+      "expected_abstention": true,
+      "metrics": null,
+      "question": "Which adverse events were reported for intervention A?",
+      "relevant_chunk_ids": [],
+      "retrieved_chunks": [
+        {
+          "chunk_id": "intervention_outcome::p001",
+          "rank": 1,
+          "score": 0.34766438603401184
+        },
+        {
+          "chunk_id": "study_design_limitations::p001",
+          "rank": 2,
+          "score": 0.26213017106056213
+        }
+      ]
+    }
+  ],
+  "configuration": {
+    "chunking_method": "paragraph-v1",
+    "top_k": 2
+  },
+  "created_at": "2026-11-06T16:24:41.153032Z",
+  "dataset": {
+    "id": "controlled-intervention-retrieval",
+    "version": "v1"
+  },
+  "run_id": "retrieval-f7f68bf6-45cb-4f7e-92ba-4f9db405a690",
+  "run_type": "retrieval",
+  "schema_version": "0.1",
+  "summary": {
+    "expected_abstention_case_count": 2,
+    "mean_hit_at_k": 1.0,
+    "mean_recall_at_k": 1.0,
+    "mean_reciprocal_rank": 1.0,
+    "scored_case_count": 4,
+    "total_case_count": 5
+  },
+  "system": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "name": "researcher-rag-eval",
+    "version": "local-dev"
+  }
+}
